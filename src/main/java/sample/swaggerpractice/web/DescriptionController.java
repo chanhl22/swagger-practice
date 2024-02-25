@@ -26,4 +26,16 @@ public class DescriptionController {
 
     }
 
+    @Operation(summary = "문서 작성 3", description = """
+            심지어는 마크다운 문법을 지원합니다.
+            ### 결과
+            - 내용 1
+            - 내용 2
+            - 내용 3""")
+    @ResponseBody
+    @GetMapping("/create/doc/3")
+    public void createDoc3() {
+
+    }
+
 }
