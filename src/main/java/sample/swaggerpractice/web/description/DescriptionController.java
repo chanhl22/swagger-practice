@@ -1,4 +1,4 @@
-package sample.swaggerpractice.web;
+package sample.swaggerpractice.web.description;
 
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DescriptionController {
 
-    @Operation(summary = "문서 작성 1", description = "description을 길게 작성하는 경우가 있습니다.<br>br로 줄 바꿀수도 있고\\n\\\\n으로도 줄바꿈이 가능합니다.")
+    @Operation(summary = "문서 작성 1", description = "description을 길게 작성하는 경우가 있습니다.<br>br로 줄바꿈이 가능합니다.")
     @ResponseBody
     @GetMapping("/create/doc/1")
     public void createDoc1() {
