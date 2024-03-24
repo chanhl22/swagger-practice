@@ -6,6 +6,7 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.OK;
 
 @Schema(description = "응답 공통 규격")
@@ -36,12 +37,12 @@ public class ApiResponse<T> {
         return of(OK, OK.name(), data);
     }
 
-    public static <T> ApiResponse<T> ok() {
-        return of(OK, OK.name(), null);
-    }
-
     public static <T> ApiResponse<T> created() {
         return of(CREATED, CREATED.name(), null);
+    }
+
+    public static <T> ApiResponse<T> fail(HttpStatus httpStatus) {
+        return of(httpStatus, httpStatus.name(), null);
     }
 
 }
